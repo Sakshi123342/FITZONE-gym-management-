@@ -1,0 +1,757 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Home - FITZONE
+{% endblock %}
+
+{% block extra_css %}
+<style>
+
+/* =========================
+   HOME PAGE
+========================= */
+
+.hero {
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 30px;
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
+        url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero-small {
+    color: #e63946;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 58px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    font-weight: 800;
+    color: white;
+}
+
+.hero h1 span {
+    display: block;
+    color: #e63946;
+}
+
+.hero-text {
+    font-size: 18px;
+    color: #ddd;
+    line-height: 1.6;
+    max-width: 650px;
+    margin: 0 auto 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.hero-buttons a {
+    text-decoration: none;
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.hero-buttons .btn-primary {
+    background: #e63946;
+    color: white;
+}
+
+.hero-buttons .btn-secondary {
+    border: 2px solid #e63946;
+    color: #e63946;
+    background: transparent;
+}
+
+/* GENERAL SECTIONS */
+
+.home-page section,
+.why-section,
+.about-section,
+.services-section,
+.trainers-section,
+.membership-section,
+.bmi-section,
+.cta-section {
+    padding: 80px 30px;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.section-heading > p:first-child {
+    color: #e63946;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.section-heading h2 span {
+    color: #e63946;
+}
+
+.section-heading > p:last-child {
+    color: #777;
+    line-height: 1.7;
+}
+
+/* WHY SECTION */
+
+.why-section {
+    background: #151515;
+    color: white;
+}
+
+.why-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.why-card {
+    background: #1f1f1f;
+    padding: 35px 25px;
+    text-align: center;
+    border: 1px solid #2d2d2d;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.why-card:hover {
+    transform: translateY(-8px);
+    border-color: #e63946;
+}
+
+.why-icon {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.why-card h3 {
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.why-card p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+/* ABOUT SECTION */
+
+.about-section {
+    background: #111;
+    color: white;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: auto;
+}
+
+.section-label {
+    color: #e63946;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.about-content h2 {
+    font-size: 42px;
+    margin-bottom: 25px;
+}
+
+.about-content h2 span {
+    color: #e63946;
+}
+
+.about-content p:not(.section-label) {
+    color: #bbb;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* SERVICES */
+
+.services-section {
+    background: #151515;
+    color: white;
+}
+
+.services-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    background: #1f1f1f;
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid #2d2d2d;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: #e63946;
+}
+
+.service-icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+/* TRAINERS */
+
+.trainers-section {
+    background: #111;
+    color: white;
+}
+
+.trainers-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.trainer-card {
+    background: #1f1f1f;
+    text-align: center;
+    border: 1px solid #2d2d2d;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s;
+    padding-bottom: 25px;
+}
+
+.trainer-card:hover {
+    transform: translateY(-8px);
+    border-color: #e63946;
+}
+
+.trainer-image {
+    height: 220px;
+    background: #292929;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 25px;
+}
+
+.trainer-card h3 {
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.trainer-card p {
+    color: #e63946;
+    font-size: 14px;
+}
+
+/* MEMBERSHIP */
+
+.membership-section {
+    background: #151515;
+    color: white;
+}
+
+.membership-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.membership-card {
+    position: relative;
+    background: #1f1f1f;
+    padding: 40px 30px;
+    text-align: center;
+    border: 1px solid #333;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.membership-card:hover {
+    transform: translateY(-8px);
+}
+
+.membership-card.popular {
+    border: 2px solid #e63946;
+}
+
+.popular-label {
+    background: #e63946;
+    color: white;
+    padding: 8px;
+    margin: -40px -30px 25px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.membership-card h3 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.membership-card h4 {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.membership-card h4 span {
+    font-size: 14px;
+    color: #999;
+}
+
+.membership-card p:not(.popular-label) {
+    color: #bbb;
+    margin-bottom: 15px;
+}
+
+.membership-card .btn-primary,
+.membership-card .btn-secondary {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* BMI */
+
+.bmi-section {
+    background: #111;
+    color: white;
+}
+
+.bmi-box {
+    max-width: 500px;
+    margin: auto;
+    background: #1f1f1f;
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.bmi-box label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ddd;
+}
+
+.bmi-box input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    background: #111;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 5px;
+}
+
+.bmi-box button {
+    width: 100%;
+    padding: 14px;
+    background: #e63946;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#bmiResult {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+/* CTA */
+
+.cta-section {
+    background: #e63946;
+    color: white;
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.cta-content h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.cta-content h2 span {
+    color: #111;
+}
+
+.cta-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.cta-content .btn-primary {
+    background: #111;
+    color: white;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+    .why-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-container,
+    .trainers-container,
+    .membership-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 550px;
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-buttons a {
+        width: 220px;
+        text-align: center;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+    .why-container,
+    .services-container,
+    .trainers-container,
+    .membership-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content h2 {
+        font-size: 32px;
+    }
+
+    .cta-content h2 {
+        font-size: 32px;
+    }
+
+    .bmi-box {
+        padding: 25px;
+    }
+}
+
+</style>
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <div class="hero-content">
+        <p class="hero-small">WELCOME TO FITZONE</p>
+
+        <h1>
+            TRANSFORM YOUR BODY
+            <span>TRANSFORM YOUR LIFE</span>
+        </h1>
+
+        <p class="hero-text">
+            Build strength, improve your fitness and become the best version
+            of yourself with FITZONE.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="/contact/" class="btn-primary">JOIN NOW</a>
+            <a href="/membership/" class="btn-secondary">VIEW MEMBERSHIP</a>
+        </div>
+    </div>
+</section>
+
+<section class="why-section">
+    <div class="section-heading">
+        <p>WHY CHOOSE US</p>
+        <h2>Everything You Need To <span>Reach Your Goals</span></h2>
+    </div>
+
+    <div class="why-container">
+        <div class="why-card">
+            <div class="why-icon">🏋️</div>
+            <h3>Modern Equipment</h3>
+            <p>Train with modern and quality gym equipment designed for effective workouts.</p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon">💪</div>
+            <h3>Expert Trainers</h3>
+            <p>Get guidance from experienced trainers and improve your fitness with proper techniques.</p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon">🔥</div>
+            <h3>Flexible Plans</h3>
+            <p>Choose a membership plan that fits your fitness goals and lifestyle.</p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon">❤️</div>
+            <h3>Healthy Lifestyle</h3>
+            <p>Build strength, improve your health and maintain a healthy lifestyle.</p>
+        </div>
+    </div>
+</section>
+
+<section class="about-section">
+    <div class="about-content">
+        <p class="section-label">ABOUT FITZONE</p>
+        <h2>More Than Just A <span>Gym</span></h2>
+
+        <p>
+            FITZONE is a modern fitness center focused on helping people
+            achieve their fitness goals. Whether you want to build muscle,
+            lose weight or simply stay healthy, we are here to support you.
+        </p>
+
+        <p>
+            With professional trainers, modern equipment and flexible
+            membership plans, FITZONE provides everything you need
+            for your fitness journey.
+        </p>
+
+        <a href="/about/" class="btn-primary">LEARN MORE</a>
+    </div>
+</section>
+
+<section class="services-section">
+    <div class="section-heading">
+        <p>OUR SERVICES</p>
+        <h2>Train. Sweat. <span>Transform.</span></h2>
+    </div>
+
+    <div class="services-container">
+        <div class="service-card">
+            <div class="service-icon">🏋️</div>
+            <h3>Strength Training</h3>
+            <p>Build muscle and increase your strength with effective strength training workouts.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🏃</div>
+            <h3>Cardio Training</h3>
+            <p>Improve stamina, burn calories and keep your heart healthy with cardio workouts.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🧘</div>
+            <h3>Personal Training</h3>
+            <p>Get personalized workout guidance from our professional fitness trainers.</p>
+        </div>
+    </div>
+</section>
+
+<section class="trainers-section">
+    <div class="section-heading">
+        <p>OUR TRAINERS</p>
+        <h2>Meet Our <span>Expert Trainers</span></h2>
+    </div>
+
+    <div class="trainers-container">
+        <div class="trainer-card">
+            <div class="trainer-image">Trainer</div>
+            <h3>John Smith</h3>
+            <p>Strength & Fitness Coach</p>
+        </div>
+
+        <div class="trainer-card">
+            <div class="trainer-image">Trainer</div>
+            <h3>Alex Johnson</h3>
+            <p>Personal Fitness Trainer</p>
+        </div>
+
+        <div class="trainer-card">
+            <div class="trainer-image">Trainer</div>
+            <h3>Sarah Williams</h3>
+            <p>Cardio & Wellness Coach</p>
+        </div>
+    </div>
+</section>
+
+<section class="membership-section">
+    <div class="section-heading">
+        <p>MEMBERSHIP PLANS</p>
+        <h2>Choose Your <span>Fitness Plan</span></h2>
+    </div>
+
+    <div class="membership-container">
+        <div class="membership-card">
+            <h3>Basic</h3>
+            <h4>₹999 <span>/ Month</span></h4>
+            <p>Gym access</p>
+            <p>Cardio equipment</p>
+            <p>Basic workout guidance</p>
+            <a href="/contact/" class="btn-secondary">CHOOSE PLAN</a>
+        </div>
+
+        <div class="membership-card popular">
+            <p class="popular-label">MOST POPULAR</p>
+            <h3>Premium</h3>
+            <h4>₹1,999 <span>/ Month</span></h4>
+            <p>Unlimited gym access</p>
+            <p>Personal training</p>
+            <p>Workout guidance</p>
+            <a href="/contact/" class="btn-primary">CHOOSE PLAN</a>
+        </div>
+
+        <div class="membership-card">
+            <h3>Elite</h3>
+            <h4>₹2,999 <span>/ Month</span></h4>
+            <p>Unlimited gym access</p>
+            <p>Personal trainer</p>
+            <p>Diet & fitness guidance</p>
+            <a href="/contact/" class="btn-secondary">CHOOSE PLAN</a>
+        </div>
+    </div>
+</section>
+
+<section class="bmi-section">
+    <div class="section-heading">
+        <p>FITNESS CHECK</p>
+        <h2>Check Your <span>BMI</span></h2>
+        <p>Calculate your Body Mass Index and understand your current fitness level.</p>
+    </div>
+
+    <div class="bmi-box">
+        <label for="height">Height (cm)</label>
+        <input type="number" id="height" placeholder="Enter height">
+
+        <label for="weight">Weight (kg)</label>
+        <input type="number" id="weight" placeholder="Enter weight">
+
+        <button type="button" id="bmiButton">CALCULATE BMI</button>
+
+        <div id="bmiResult"></div>
+    </div>
+
+    <script>
+        document.getElementById("bmiButton").addEventListener("click", function () {
+            const height = parseFloat(document.getElementById("height").value);
+            const weight = parseFloat(document.getElementById("weight").value);
+            const result = document.getElementById("bmiResult");
+
+            if (!height || !weight || height <= 0 || weight <= 0) {
+                result.innerHTML = "Please enter valid height and weight.";
+                return;
+            }
+
+            const heightInMeter = height / 100;
+            const bmi = weight / (heightInMeter * heightInMeter);
+
+            let category = "";
+
+            if (bmi < 18.5) {
+                category = "Underweight";
+            } else if (bmi < 25) {
+                category = "Normal Weight";
+            } else if (bmi < 30) {
+                category = "Overweight";
+            } else {
+                category = "Obesity";
+            }
+
+            result.innerHTML =
+                "<strong>Your BMI: " + bmi.toFixed(1) + "</strong><br>" +
+                "Category: " + category;
+        });
+    </script>
+</section>
+
+<section class="cta-section">
+    <div class="cta-content">
+        <h2>
+            Ready To Start Your
+            <span>Fitness Journey?</span>
+        </h2>
+
+        <p>
+            Join FITZONE today and take the first step towards
+            a stronger and healthier you.
+        </p>
+
+        <a href="/contact/" class="btn-primary">JOIN FITZONE</a>
+    </div>
+</section>
+
+{% endblock %}

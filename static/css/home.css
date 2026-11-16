@@ -1,0 +1,532 @@
+/* =========================
+   HOME PAGE
+========================= */
+
+.hero {
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 30px;
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
+        url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero-small {
+    color: #e63946;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 58px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    font-weight: 800;
+    color: white;
+}
+
+.hero h1 span {
+    display: block;
+    color: #e63946;
+}
+
+.hero-text {
+    font-size: 18px;
+    color: #ddd;
+    line-height: 1.6;
+    max-width: 650px;
+    margin: 0 auto 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.hero-buttons a {
+    text-decoration: none;
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.hero-buttons .btn-primary {
+    background: #e63946;
+    color: white;
+}
+
+.hero-buttons .btn-secondary {
+    border: 2px solid #e63946;
+    color: #e63946;
+    background: transparent;
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+.home-page section,
+.why-section,
+.about-section,
+.services-section,
+.trainers-section,
+.membership-section,
+.bmi-section,
+.cta-section {
+    padding: 80px 30px;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.section-heading > p:first-child {
+    color: #e63946;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.section-heading h2 span {
+    color: #e63946;
+}
+
+.section-heading > p:last-child {
+    color: #777;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   WHY SECTION
+========================= */
+
+.why-section {
+    background: #151515;
+    color: white;
+}
+
+.why-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.why-card {
+    background: #1f1f1f;
+    padding: 35px 25px;
+    text-align: center;
+    border: 1px solid #2d2d2d;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.why-card:hover {
+    transform: translateY(-8px);
+    border-color: #e63946;
+}
+
+.why-icon {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.why-card h3 {
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.why-card p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about-section {
+    background: #111;
+    color: white;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: auto;
+}
+
+.section-label {
+    color: #e63946;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.about-content h2 {
+    font-size: 42px;
+    margin-bottom: 25px;
+}
+
+.about-content h2 span {
+    color: #e63946;
+}
+
+.about-content p:not(.section-label) {
+    color: #bbb;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services-section {
+    background: #151515;
+    color: white;
+}
+
+.services-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    background: #1f1f1f;
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid #2d2d2d;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: #e63946;
+}
+
+.service-icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   TRAINERS
+========================= */
+
+.trainers-section {
+    background: #111;
+    color: white;
+}
+
+.trainers-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.trainer-card {
+    background: #1f1f1f;
+    text-align: center;
+    border: 1px solid #2d2d2d;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s;
+    padding-bottom: 25px;
+}
+
+.trainer-card:hover {
+    transform: translateY(-8px);
+    border-color: #e63946;
+}
+
+.trainer-image {
+    height: 220px;
+    background: #292929;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 25px;
+}
+
+.trainer-card h3 {
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.trainer-card p {
+    color: #e63946;
+    font-size: 14px;
+}
+
+
+/* =========================
+   MEMBERSHIP
+========================= */
+
+.membership-section {
+    background: #151515;
+    color: white;
+}
+
+.membership-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.membership-card {
+    position: relative;
+    background: #1f1f1f;
+    padding: 40px 30px;
+    text-align: center;
+    border: 1px solid #333;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.membership-card:hover {
+    transform: translateY(-8px);
+}
+
+.membership-card.popular {
+    border: 2px solid #e63946;
+}
+
+.popular-label {
+    background: #e63946;
+    color: white;
+    padding: 8px;
+    margin: -40px -30px 25px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.membership-card h3 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.membership-card h4 {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.membership-card h4 span {
+    font-size: 14px;
+    color: #999;
+}
+
+.membership-card p:not(.popular-label) {
+    color: #bbb;
+    margin-bottom: 15px;
+}
+
+.membership-card .btn-primary,
+.membership-card .btn-secondary {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+
+/* =========================
+   BMI
+========================= */
+
+.bmi-section {
+    background: #111;
+    color: white;
+}
+
+.bmi-box {
+    max-width: 500px;
+    margin: auto;
+    background: #1f1f1f;
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.bmi-box label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ddd;
+}
+
+.bmi-box input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    background: #111;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 5px;
+}
+
+.bmi-box button {
+    width: 100%;
+    padding: 14px;
+    background: #e63946;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#bmiResult {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta-section {
+    background: #e63946;
+    color: white;
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.cta-content h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.cta-content h2 span {
+    color: #111;
+}
+
+.cta-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.cta-content .btn-primary {
+    background: #111;
+    color: white;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+    .why-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-container,
+    .trainers-container,
+    .membership-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 550px;
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-buttons a {
+        width: 220px;
+        text-align: center;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+    .why-container,
+    .services-container,
+    .trainers-container,
+    .membership-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content h2 {
+        font-size: 32px;
+    }
+
+    .cta-content h2 {
+        font-size: 32px;
+    }
+
+    .bmi-box {
+        padding: 25px;
+    }
+}
